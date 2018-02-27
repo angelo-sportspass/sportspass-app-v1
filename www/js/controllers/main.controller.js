@@ -8,13 +8,17 @@
   /** @ngInject */
   MainController.$inject = ['$rootScope', '$scope', '$window'];
   function MainController($rootScope, $scope, $window) {
-
+    
   	var vm = this;
+  
 
-    $scope.link = '//sportspass.com.au/';
+    $scope.link = 'http://sportsnomads.com.au/';
 
     $scope.open = function() {
-      $window.open($scope.link, '_blank')
+      cordova.InAppBrowser.open($scope.link,'_system');
+      // $window.open($scope.link, '_blank')
+     // window.open(encodeURI($scope.link), '_system');
+
     };
   }
 
