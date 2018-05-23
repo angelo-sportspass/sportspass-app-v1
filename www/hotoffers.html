@@ -1,0 +1,51 @@
+
+<ons-page ng-controller="HomeController" id="hotoffers-page">
+  <!-- <ons-splitter var="menu" >
+  <ons-splitter-side side="left" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item tappable>
+          Home
+        </ons-list-item>
+        <ons-list-item tappable>
+          Settings
+        </ons-list-item>
+        <ons-list-item tappable>
+          About
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content page="home.html"></ons-splitter-content>
+</ons-splitter> -->
+
+	<ons-toolbar class="top-menu">
+	  <div class="left">
+      <ons-toolbar-button ng-click="menu.left.open()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+	  </div>
+	  <div class="center">HOT OFFERS</div>
+	  <div class="right">
+	  	<a  ng-click="back()">
+       <!-- <i class="zmdi zmdi-arrow-left"></i> -->
+       Back
+      </a>
+	  </div>
+	</ons-toolbar>
+
+	<div class="hotoffers">
+    <div class="hotoffers-group clearfix">
+  	  <ons-row>
+        <ons-col width="50%">
+          <img width="100%" src="//s3-ap-southeast-2.amazonaws.com/sportspass/Production/banners/64ZePHgUejicWjbbc0Sa.png " />
+        </ons-col>
+        <ons-col width="50%">
+          <img width="100%" src="//s3-ap-southeast-2.amazonaws.com/sportspass/Production/banners/64ZePHgUejicWjbbc0Sa.png " />
+        </ons-col>
+      </ons-row>
+    </div>
+	</div>
+
+</ons-page>
+
