@@ -1,23 +1,48 @@
 
 <ons-page ng-controller="HomeController" id="hotoffers-page">
-  <!-- <ons-splitter var="menu" >
-  <ons-splitter-side side="left" width="220px" collapse swipeable>
-    <ons-page>
-      <ons-list>
-        <ons-list-item tappable>
-          Home
-        </ons-list-item>
-        <ons-list-item tappable>
-          Settings
-        </ons-list-item>
-        <ons-list-item tappable>
-          About
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-  </ons-splitter-side>
-  <ons-splitter-content page="home.html"></ons-splitter-content>
-</ons-splitter> -->
+  
+  <ons-splitter var="menu" >
+    <ons-splitter-side side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item  ng-click="loadPage('hotoffers.html')" tappable>
+            All
+          </ons-list-item>
+          <ons-list-item tappable>
+            Club Perks
+          </ons-list-item>
+          <ons-list-item tappable>
+            Movies
+          </ons-list-item>
+          <ons-list-item tappable>
+            Experiences
+          </ons-list-item>
+          <ons-list-item tappable>
+            Travel & Car Hire
+          </ons-list-item>
+          <ons-list-item tappable>
+            Fuel Roadside
+          </ons-list-item>
+          <ons-list-item tappable>
+            Show & Save
+          </ons-list-item>
+          <ons-list-item tappable>
+            Food & Drink
+          </ons-list-item>
+          <ons-list-item tappable>
+            Competitions
+          </ons-list-item>
+          <ons-list-item tappable>
+            Major Retailer
+          </ons-list-item>
+          <ons-list-item tappable>
+            Cashback
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <!-- <ons-splitter-content page="home.html"></ons-splitter-content> -->
+  </ons-splitter>
 
 	<ons-toolbar class="top-menu">
 	  <div class="left">

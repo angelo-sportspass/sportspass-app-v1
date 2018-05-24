@@ -16,14 +16,14 @@
 	</div>
 	<div class="form-fields">
 	  <p>
-	    <input type="email" class="text-input" ng-model="data.email" placeholder="Email" />
+	    <input type="email" class="text-input" ng-model="data.user_name" placeholder="Email" />
 	  </p>
 	  <p>
 	    <input type="password" class="text-input" ng-model="data.password" placeholder="Password" />
 	  </p>
 	  <p style="margin-top: 30px;">
 	  	<!-- ng-click="login( data )" -->
-	    <ons-button  modifier="large" ng-click="home()">Sign in</ons-button>
+	    <ons-button  modifier="large" ng-click="login(data)">Sign in</ons-button>
 	  </p>
 	  <p>
 	    Don’t have a SportsPass account? <a class="" ng-click="register()" >Sign up.</a>

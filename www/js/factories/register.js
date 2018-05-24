@@ -10,7 +10,7 @@ angular
     	 var service = {};
 
     	 service.register = function(data){
-    	 	return $http.post( sportspass.baseUrl + '/user', data);
+    	 	return $http.post( sportspass.baseUrl + '/account', data);
     	 }
 
     	 return service;

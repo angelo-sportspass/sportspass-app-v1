@@ -7,54 +7,86 @@
   <link rel="stylesheet" href="css/onsen-css-components.css"/>
   
   <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style-icon.css"/>
+
 </head>
 
 <body>
 
-  <ons-page ng-controller="MainController">
+  <ons-navigator var="mainPage" id="mainPage">
+    
+    <ons-page ng-controller="MainController" id="landing-page">
+      <div style="margin-top: 80%;margin-left: 10%;">
+        <ons-row>
+          <ons-col width="65%">
+            <img src="img/logo.png" id="logo" style="width: 100%">
+          </ons-col>
+        </ons-row>
 
-    <div style="margin-top: 100%;margin-left: 10%;">
+        <ons-row>
+          <ons-col width="65%" >
+            <ons-button id="button-login" modifier="large" ng-click="login()">
+            Login
+            </ons-button> 
 
-      <ons-row>
-        <ons-col width="65%">
-          <img src="img/logo.png" id="logo" style="width: 100%">
-        </ons-col>
-      </ons-row>
+          <!--   <a href="javascript:void(0)" ng-click="login()" modifier="large" id="button-login" class="button button--material button--large">Login</a> -->
+          </ons-col>
+        </ons-row>
 
-      <ons-row>
-        <ons-col width="65%">
-          <ons-button id="button-login" modifier="large" ng-click="open()">
-          Login
-          </ons-button>
-        </ons-col>
-      </ons-row>
+        <ons-row>
+          <ons-col width="65%">
 
-      <ons-row>
-        <ons-col width="65%">
-          <ons-button id="button-register" modifier="large" ng-click="open()">
-          Register
-          </ons-button>
-        </ons-col>
-      </ons-row>
-    </div>
+            <ons-button id="button-register" modifier="large" ng-click="register()">
+            Register
+            </ons-button>
+           <!--  <a href="https://sportspass.com.au/register" onClick="javascript:return openExternal(this)" modifier="large" id="button-register" class="button button--material button--large">
+              Register
+            </a> -->
+          </ons-col>
+        </ons-row>
+      </div>
+    </ons-page>
+  </ons-navigator>
 
-  </ons-page>
-
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
   <script src="js/onsenui.min.js"></script>
   <script src="js/angular-onsenui.min.js"></script>
 
+  <script src="cordova.js"></script>
   <script src="js/app.js"></script>
 
-  <script src="js/controllers/main.controller.js"></script>
+  <script src="js/services/service.js"></script>
+  <script src="js/factories/login.js"></script>
+  <script src="js/factories/register.js"></script>
 
-  <!-- <script>
-    var module = angular.module('app', ['onsen', '$window']);
-    module.controller('PageController', function($scope, $window) {
-      $scope.alert = function(message) {
-        ons.notification.alert(message);
-      };
-    });
-  </script> -->
+  <!-- Controllers -->
+  <script src="js/controllers/main.controller.js"></script>
+  <script src="js/controllers/login.controller.js"></script>
+  <script src="js/controllers/register.controller.js"></script>
+  <script src="js/controllers/home.controller.js"></script>
+  <script type="text/javascript">
+    (function() {
+        var xhr = {};
+        xhr.open = XMLHttpRequest.prototype.open;
+
+        XMLHttpRequest.prototype.open = function(method, url) {
+            console.log(url);
+            if(url.indexOf('/proxy/') == 0){
+                url = window.decodeURIComponent(url.substr(7));
+            }
+            xhr.open.apply(this, arguments);
+        };
+    })(window)
+  </script>
+  <script>
+    function openExternal(elem) {
+        console.log(elem.href);
+        window.open(elem.href, "_system");
+        return false; // Prevent execution of the default onClick handler 
+    }
+  </script>
+
+
 </body>
 </html>

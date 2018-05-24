@@ -184,6 +184,10 @@ body {font-family: 'exoregular';}
     padding: 0 5px;
 }
 
+ons-splitter-side ons-list ons-list-item {
+    font-family: 'exoregular';
+}
+
 ons-toolbar:not([inline]) {
     background: rgba(0, 0, 0, 1);
     position: relative;

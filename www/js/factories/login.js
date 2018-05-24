@@ -11,7 +11,7 @@ angular
     	 var service = {};
 
     	 service.login = function(data){
-    	 	return $http.post( sportspass.baseUrl + '/user/login', data);
+    	 	return $http.post( sportspass.baseUrl + '/account/login', data);
     	 }
 
     	 return service;

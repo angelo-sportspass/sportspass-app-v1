@@ -9,6 +9,7 @@
   HomeController.$inject = ['$rootScope', '$scope', '$window', 'LoginService'];
   function HomeController($rootScope, $scope, $window, LoginService) {
     
+
     // Back Page
     $scope.back  = function()
     {
@@ -20,6 +21,14 @@
     {
       $scope.mainPage.pushPage('hotoffers.html', { animation : 'lift' });
     };
+
+    $scope.loadPage = function(page) {
+
+      $scope.mainPage.pushPage(page, { animation : 'lift' });
+      menu.left.close();
+    };
+
+    
   }
 
 })();

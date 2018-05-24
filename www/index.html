@@ -8,11 +8,12 @@
   
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/style-icon.css"/>
+
 </head>
 
 <body>
 
-  <ons-navigator var="mainPage">
+  <ons-navigator var="mainPage" id="mainPage">
     
     <ons-page ng-controller="MainController" id="landing-page">
       <div style="margin-top: 80%;margin-left: 10%;">
@@ -56,21 +57,36 @@
   <script src="js/app.js"></script>
 
   <script src="js/services/service.js"></script>
-
   <script src="js/factories/login.js"></script>
+  <script src="js/factories/register.js"></script>
 
   <!-- Controllers -->
   <script src="js/controllers/main.controller.js"></script>
   <script src="js/controllers/login.controller.js"></script>
   <script src="js/controllers/register.controller.js"></script>
   <script src="js/controllers/home.controller.js"></script>
-<!--   <script>
+  <script type="text/javascript">
+    (function() {
+        var xhr = {};
+        xhr.open = XMLHttpRequest.prototype.open;
+
+        XMLHttpRequest.prototype.open = function(method, url) {
+            console.log(url);
+            if(url.indexOf('/proxy/') == 0){
+                url = window.decodeURIComponent(url.substr(7));
+            }
+            xhr.open.apply(this, arguments);
+        };
+    })(window)
+  </script>
+  <script>
     function openExternal(elem) {
+        console.log(elem.href);
         window.open(elem.href, "_system");
         return false; // Prevent execution of the default onClick handler 
     }
   </script>
- -->
+
 
 </body>
 </html>

@@ -18,6 +18,24 @@
     $scope.login = function( data )
     {
       console.log(data);
+
+      LoginService.login(data).then(function(response){
+
+        var user = JSON.stringify(response.data);
+        localStorage.setItem('user', user);
+
+        $scope.home();
+        console.log(user);
+
+      }, function(error) {
+        
+          if (error.status == 404) {
+            vm.errorMessage = 'User ' + error.statusText + '.';
+          } else if (error.status == 403) {
+            vm.errorMessage = 'Username / Password invalid.';
+          }
+      });
+
     };
 
     // REGISTER PAGE

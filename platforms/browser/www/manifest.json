@@ -3,9 +3,9 @@
   "display": "standalone",
   "name": "Sportspass",
   "short_name": "Sportspass",
-  "version": "org.sportspass.v1",
-  "description": "Hello World sample application that responds to the deviceready event.",
-  "author": "PhoneGap Team",
+  "version": "com.sportspass.v1",
+  "description": "SportsPass",
+  "author": "SportsPass",
   "icons": [],
   "start_url": "index.html"
 }
